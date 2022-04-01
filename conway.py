@@ -133,7 +133,8 @@ class GameOfLife:
         self.grid[index[0]+6, index[1]+11] = self.aliveValue
         self.grid[index[0]+6, index[1]+15] = self.aliveValue
         self.grid[index[0]+6, index[1]+17] = self.aliveValue
-        self.grid[index[0]+6, index[1]+17] = self.aliveValue
+        #self.grid[index[0]+6, index[1]+17] = self.aliveValue   incorrect line
+        self.grid[index[0]+6, index[1]+18] = self.aliveValue    # correct line
         self.grid[index[0]+6, index[1]+23] = self.aliveValue
         self.grid[index[0]+6, index[1]+25] = self.aliveValue
         

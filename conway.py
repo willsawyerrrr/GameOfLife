@@ -48,24 +48,24 @@ class GameOfLife:
         #get weighted sum of neighbours
         #PART A & E CODE HERE
         grid = self.getGrid()
-        N = grid.shape[0]
-        weightingGrid = np.zeros((N, N), np.int)
+        rows, cols = grid.shape
+        weightingGrid = np.zeros((rows, cols), np.int)
 
-        for i in range(N):
+        for i in range(rows):
             rowMin = max(i - 1, 0)
-            rowMax = min(i + 2, N)
-            for j in range(N):
+            rowMax = min(i + 2, rows)
+            for j in range(cols):
                 colMin = max(j - 1, 0)
-                colMax = min(j + 2, N)
+                colMax = min(j + 2, cols)
                 neighborhood = grid.copy()[rowMin:rowMax, colMin:colMax]
                 neighborhood[i - rowMin, j - colMin] = 0
                 weightingGrid[i, j] = np.sum(neighborhood)
         
         # implement the GoL rules by thresholding the weights
-        evolvedGrid = np.zeros((N, N), np.int)
+        evolvedGrid = np.zeros((rows, cols), np.int)
 
-        for i in range(N):
-            for j in range(N):
+        for i in range(rows):
+            for j in range(cols):
                 if grid[i, j] == 0: # currently dead
                     if weightingGrid[i, j] == 3: # reproduction
                         evolvedGrid[i, j] = 1
@@ -152,11 +152,24 @@ class GameOfLife:
         '''
         Assumes txtString contains the entire pattern as a human readable pattern without comments
         '''
+        # skip comments
+        while txtString[0] == "!":
+            txtString = txtString[txtString.find("\n") + 1:]
 
+        width = txtString.find("\n") + 1 # +1 for '\n'
+        height = (int) (len(txtString) / (width))
+        grid = np.zeros((height, width), np.int)
+        for index, char in enumerate(txtString):
+            if char == "O":
+                row = index // width
+                col = index % width
+                grid[row, col] = 1
+        
+        self.grid = grid
 
     def insertFromRLE(self, rleString, pad=0):
         '''
         Given string loaded from RLE file, populate the game grid
         '''
 
-        
+

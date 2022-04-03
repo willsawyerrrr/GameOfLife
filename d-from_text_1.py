@@ -6,7 +6,6 @@ Created on Tue Jan 15 12:37:52 2019
 
 @author: shakes
 """
-from fileinput import filename
 import conway
 
 padding = 10

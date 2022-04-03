@@ -12,7 +12,7 @@ import conway
 padding = 10
 
 #read plain text file
-with open("patters3.txt", "r") as text_file:
+with open("pattern3.txt", "r") as text_file:
         txtString = text_file.read()
 
 #create the game of life object

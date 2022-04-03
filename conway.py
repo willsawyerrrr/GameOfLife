@@ -157,13 +157,13 @@ class GameOfLife:
             txtString = txtString[txtString.find("\n") + 1:]
 
         width = txtString.find("\n") + 1 # +1 for '\n'
-        height = (int) (len(txtString) / (width))
-        grid = np.zeros((height, width), np.int)
+        height = (int) (len(txtString) / (width)) + 1
+        grid = np.zeros((height, width - 1), np.int) # -1 to exclude '\n'
         for index, char in enumerate(txtString):
             if char == "O":
                 row = index // width
                 col = index % width
-                grid[row, col] = 1
+                grid[row][col] = 1
         
         self.grid = grid
 
@@ -171,5 +171,16 @@ class GameOfLife:
         '''
         Given string loaded from RLE file, populate the game grid
         '''
+        parser = rle.RunLengthEncodedParser(rleString)
+        charGrid = parser.pattern_2d_array
+        shape = (len(charGrid), len(charGrid[0]))
+        grid = np.zeros(shape, int)
 
-
+        for row in range(parser.size_y):
+            for col in range(parser.size_x):
+                if charGrid[row][col] == 'b':
+                    grid[row][col] = 0
+                elif charGrid[row][col] == 'o':
+                    grid[row][col] = 1
+        
+        self.grid = grid

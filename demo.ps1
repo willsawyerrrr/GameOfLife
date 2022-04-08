@@ -11,7 +11,7 @@ function Open-Code {
         [int] $LineNumber = 1
     )
 
-    Write-Host "`tDo you want to view " -NoNewline
+    Write-Host "`tDo you want to open " -NoNewline
     Write-Host "${Filename}" -ForegroundColor red -NoNewline
     Write-Host "${Extension}? [Y/N] " -NoNewline
     $Open = Read-Host

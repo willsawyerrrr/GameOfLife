@@ -11,7 +11,7 @@ import convolve
 padding = 10
 
 #read RLE file
-with open("g-turingmachine.rle", "r") as text_file:
+with open("g-turing_machine.rle", "r") as text_file:
         rleString = text_file.read()
 
 #create the game of life object

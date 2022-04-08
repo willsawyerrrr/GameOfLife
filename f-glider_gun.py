@@ -6,16 +6,16 @@ Created on Tue Jan 15 12:37:52 2019
 
 @author: shakes
 """
-import conway
+import convolve
 
 padding = 10
 
 #read RLE file
-with open("gosperglidergun.rle", "r") as text_file:
+with open("f-glider_gun.rle", "r") as text_file:
         rleString = text_file.read()
 
 #create the game of life object
-life = conway.GameOfLife(fastMode=True)
+life = convolve.GameOfLife(fastMode=True)
 life.insertFromRLE(rleString, padding)
 cells = life.getStates() #initial state
 

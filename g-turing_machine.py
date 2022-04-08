@@ -6,7 +6,7 @@ Created on Tue Jan 15 12:37:52 2019
 
 @author: shakes
 """
-import conway
+import convolve
 
 padding = 10
 

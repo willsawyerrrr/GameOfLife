@@ -113,13 +113,13 @@ Write-Host ".`n"
 
 Open-Code -Filename "conway.py" -Extension " to the implemented insertFromPlainText() method" -LineNumber 166
 
-Open-Code -Filename "d-pattern1.txt"
+Open-Code -Filename "d-pattern_1.txt"
 Run-Program -Filename "d-from_text_1.py"
 
-Open-Code -Filename "d-pattern2.txt"
+Open-Code -Filename "d-pattern_2.txt"
 Run-Program -Filename "d-from_text_2.py"
 
-Open-Code -Filename "d-pattern3.txt"
+Open-Code -Filename "d-pattern_3.txt"
 Run-Program -Filename "d-from_text_3.py"
 
 Move-On -Part "e"
@@ -149,13 +149,13 @@ Write-Host ".`n"
 
 Open-Code -Filename "conway.py" -Extension " to the implemented insertFromRLE() method" -LineNumber 186
 
-Open-Code -Filename "f-pattern1.rle"
+Open-Code -Filename "f-pattern_1.rle"
 Run-Program -Filename "f-from_rle_1.py"
 
-Open-Code -Filename "f-pattern2.rle"
+Open-Code -Filename "f-pattern_2.rle"
 Run-Program -Filename "f-from_rle_2.py"
 
-Open-Code -Filename "f-pattern2.rle"
+Open-Code -Filename "f-pattern_2.rle"
 Run-Program -Filename "f-from_rle_2.py"
 
 Move-On -Part "g"

@@ -11,7 +11,7 @@ import convolve
 padding = 10
 
 #read plain text file
-with open("e-pattern_3.txt", "r") as text_file:
+with open("e-pattern_3.rle", "r") as text_file:
         txtString = text_file.read()
 
 #create the game of life object

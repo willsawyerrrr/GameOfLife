@@ -48,7 +48,7 @@ class GameOfLife:
         # get weighted sum of neighbours
         grid = self.getGrid()
         rows, cols = grid.shape
-        weightingGrid = signal.convolve(grid, self.neighborhood)
+        weightingGrid = signal.convolve(grid, self.neighborhood, mode="same")
         
         # implement the GoL rules by thresholding the weights
         evolvedGrid = np.zeros((rows, cols), np.int)

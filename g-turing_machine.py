@@ -15,7 +15,7 @@ with open("g-turing_machine.rle", "r") as text_file:
         rleString = text_file.read()
 
 #create the game of life object
-life = conway.GameOfLife(fastMode=True)
+life = convolve.GameOfLife(fastMode=True)
 life.insertFromRLE(rleString, padding)
 cells = life.getStates() #initial state
 

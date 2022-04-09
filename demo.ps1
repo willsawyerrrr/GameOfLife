@@ -155,8 +155,8 @@ Run-Program -Filename "f-from_rle_1.py"
 Open-Code -Filename "f-pattern_2.rle"
 Run-Program -Filename "f-from_rle_2.py"
 
-Open-Code -Filename "f-pattern_2.rle"
-Run-Program -Filename "f-from_rle_2.py"
+Open-Code -Filename "f-pattern_3.rle"
+Run-Program -Filename "f-from_rle_3.py"
 
 Move-On -Part "g"
 

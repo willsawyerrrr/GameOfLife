@@ -11,7 +11,7 @@ import convolve
 padding = 10
 
 #read RLE file
-with open("f-pattern2.rle", "r") as text_file:
+with open("f-pattern_2.rle", "r") as text_file:
         rleString = text_file.read()
 
 #create the game of life object

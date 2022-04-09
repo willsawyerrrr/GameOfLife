@@ -16,7 +16,7 @@ with open("e-pattern_2.txt", "r") as text_file:
 
 #create the game of life object
 life = conway.GameOfLife(N=1024, fastMode=True)
-life.insertFromPlainText(txtString, padding)
+life.insertFromRLE(txtString, padding)
 cells = life.getStates() #initial state
 
 #-------------------------------

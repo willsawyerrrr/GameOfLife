@@ -131,14 +131,14 @@ Write-Host "based on convolution and run a large simulation (N > 1024).`n"
 
 Open-Code -Filename "convolve.py" -Extension " to the reimplemented evolve() method" -LineNumber 55
 
-Open-Code -Filename "e-pattern1.txt"
-Run-Program -Filename "e-from_text_1.py"
+Open-Code -Filename "e-pattern_1.rle"
+Run-Program -Filename "e-convolved_1.py"
 
-Open-Code -Filename "e-pattern2.txt"
-Run-Program -Filename "e-from_text_2.py"
+Open-Code -Filename "e-pattern_2.rle"
+Run-Program -Filename "e-convolved_2.py"
 
-Open-Code -Filename "e-pattern3.txt"
-Run-Program -Filename "e-from_text_3.py"
+Open-Code -Filename "e-pattern_3.rle"
+Run-Program -Filename "e-convolved_3.py"
 
 Move-On -Part "f"
 

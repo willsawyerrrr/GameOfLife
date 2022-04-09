@@ -6,7 +6,7 @@ Created on Tue Jan 15 12:37:52 2019
 
 @author: shakes
 """
-import conway
+import convolve
 
 padding = 10
 
@@ -15,7 +15,7 @@ with open("e-pattern_1.txt", "r") as text_file:
         txtString = text_file.read()
 
 #create the game of life object
-life = conway.GameOfLife(N=1024, fastMode=True)
+life = convolve.GameOfLife(N=1024, fastMode=True)
 life.insertFromRLE(txtString, padding)
 cells = life.getStates() #initial state
 

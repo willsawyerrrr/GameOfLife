@@ -1,0 +1,4 @@
+The Game of Life is turing complete.
+
+Game of Life has a function which defines its transition between states, being the four
+    GoL evolution rules.

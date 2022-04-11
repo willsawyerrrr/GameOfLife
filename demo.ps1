@@ -176,8 +176,7 @@ Move-On -Part "h"
 Write-Host "Part h) Comment on whether Game Of Life is Turing " -NoNewline
 Write-Host "complete with reference to the theory of Turing machines.`n"
 
-Write-Host "Game of Life is turing complete."
-Read-Host
+Open-Code -Filename "h-turing_complete.txt"
 
 Clear-Host
 Get-Content -Path .\end_demo.txt

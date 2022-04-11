@@ -51,20 +51,10 @@ class GameOfLife:
         weightingGrid = signal.convolve(grid, self.neighborhood, mode="same")
         
         # implement the GoL rules by thresholding the weights
-        evolvedGrid = np.zeros((rows, cols), np.int)
-
-        for i in range(rows):
-            for j in range(cols):
-                if grid[i, j] == 0: # currently dead
-                    if weightingGrid[i, j] == 3: # reproduction
-                        evolvedGrid[i, j] = 1
-                else: # currently alive
-                    if weightingGrid[i, j] < 2: # underpopulation
-                        evolvedGrid[i, j]= 0
-                    elif weightingGrid[i, j] > 3: # overpopulation
-                        evolvedGrid[i, j]= 0
-                    else: # survival
-                        evolvedGrid[i, j]= 1
+        evolvedGrid = (
+            ((grid == 1) & (weightingGrid > 1) & (weightingGrid < 4)) # survival
+            | ((grid == 0) & (weightingGrid == 3))                # reproduction
+        ).astype(np.int)
         
         # update the grid
         self.grid = evolvedGrid
